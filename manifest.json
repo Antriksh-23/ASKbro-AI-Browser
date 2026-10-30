@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ASKbro - AI Browser Agent",
+  "version": "1.0.0",
+  "description": "Chrome side-panel AI agent that understands web pages and acts under human control.",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "Open ASKbro"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  }
+}
