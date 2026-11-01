@@ -1,4 +1,4 @@
-# ASKbro — AI Browser Agent for Google Chrome
+# ASKbro — AI Browser Agent for Web Browsers
 
 <p align="center">
   <img src="public/icons/icon-128.png" alt="ASKbro Logo" width="96" height="96" />

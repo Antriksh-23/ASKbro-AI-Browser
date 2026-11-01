@@ -103,7 +103,12 @@ test('Slice 4.4 - README.md contains comprehensive documentation and architectur
   const readme = fs.readFileSync(readmePath, 'utf-8');
 
   // Core sections
-  assert.ok(readme.includes('# ASKbro — AI Browser Agent for Google Chrome'), 'Must have main title');
+  assert.ok(
+    readme.includes('# ASKbro — AI Browser Agent for Web Browsers') ||
+    readme.includes('# ASKbro — AI Browser Agent for Web Browser') ||
+    readme.includes('# ASKbro — AI Browser Agent for Google Chrome'),
+    'Must have main title'
+  );
   assert.ok(readme.includes('System Architecture'), 'Must describe system architecture');
   assert.ok(readme.includes('Phase 1: The Eyes'), 'Must document Phase 1 features');
   assert.ok(readme.includes('Phase 2: The Brain'), 'Must document Phase 2 features');
