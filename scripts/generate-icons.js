@@ -121,3 +121,4 @@ for (const size of sizes) {
   fs.writeFileSync(filePath, png);
   console.log(`Generated: ${filePath}`);
 }
+

@@ -2,11 +2,162 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #0C0D0E;
+    color: #E0E3E8;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Engineered Industrial Graphite Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0C0D0E;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A303A;
+    border-radius: 1px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B4452;
+  }
+}
+
+@layer utilities {
+  /* Precision Industrial Module Card */
+  .chassis-card {
+    background-color: #181B1F;
+    border: 1px solid #2A303A;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  }
+
+  /* Recessed Component Well / Telemetry Bed */
+  .chassis-well {
+    background-color: #121417;
+    border: 1px solid #22262E;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* Raised / Interactive Module */
+  .chassis-elevated {
+    background-color: #20242A;
+    border: 1px solid #343B45;
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* Precision Input Console */
+  .chassis-input {
+    background-color: #121417;
+    border: 1px solid #2A303A;
+    color: #E0E3E8;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .chassis-input:focus {
+    background-color: #15181C;
+    border-color: #D4FF00;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(212, 255, 0, 0.35);
+  }
+
+  /* Machined High-Voltage Primary Action Button */
+  .btn-lime {
+    background-color: #D4FF00;
+    color: #0C0D0E;
+    font-weight: 600;
+    border: 1px solid #D4FF00;
+    transition: transform 0.08s ease, filter 0.12s ease, background-color 0.12s ease;
+  }
+
+  .btn-lime:hover:not(:disabled) {
+    background-color: #E4FF33;
+    border-color: #E4FF33;
+    box-shadow: 0 0 12px -2px rgba(212, 255, 0, 0.5);
+  }
+
+  .btn-lime:active:not(:disabled) {
+    transform: translateY(1px);
+    background-color: #B8E000;
+  }
+
+  /* Machined Graphite Secondary Action Button */
+  .btn-graphite {
+    background-color: #20242A;
+    color: #E0E3E8;
+    border: 1px solid #343B45;
+    transition: background-color 0.12s ease, border-color 0.12s ease, transform 0.08s ease;
+  }
+
+  .btn-graphite:hover:not(:disabled) {
+    background-color: #292E36;
+    border-color: #505967;
+    color: #FFFFFF;
+  }
+
+  .btn-graphite:active:not(:disabled) {
+    transform: translateY(1px);
+    background-color: #181B1F;
+  }
+
+  /* Muted Amber Warning / Caution Button */
+  .btn-amber {
+    background-color: #F59E0B;
+    color: #0C0D0E;
+    font-weight: 600;
+    border: 1px solid #F59E0B;
+    transition: transform 0.08s ease, background-color 0.12s ease;
+  }
+
+  .btn-amber:hover:not(:disabled) {
+    background-color: #FBBF24;
+    box-shadow: 0 0 12px -2px rgba(245, 158, 11, 0.5);
+  }
+
+  .btn-amber:active:not(:disabled) {
+    transform: translateY(1px);
+    background-color: #D97706;
+  }
+
+  /* Laser hairline divider */
+  .laser-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #2A303A 15%, #2A303A 85%, transparent);
+  }
+
+  /* Telemetry Status Indicator */
+  .telemetry-led-lime {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background-color: #D4FF00;
+    box-shadow: 0 0 6px rgba(212, 255, 0, 0.7);
+  }
+
+  .telemetry-led-amber {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background-color: #F59E0B;
+    box-shadow: 0 0 6px rgba(245, 158, 11, 0.7);
+  }
+
+  .telemetry-led-muted {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background-color: #505967;
+  }
 }

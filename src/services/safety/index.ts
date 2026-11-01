@@ -1,24 +1,12 @@
 /**
- * Deterministic Safety Guardrails Engine
+ * ASKbro Deterministic Code Safety Guardrails (Slice 4.3)
+ *
+ * Provides:
+ * - domainGuard: Hardcoded blacklist for banking, payment, and checkout domains
+ * - fieldGuard: Strict rejection of passwords, OTPs, credit cards, CVVs, PINs, and SSNs
+ * - consequentialGuard: Secondary confirmation modal requirement for submit, pay, order, delete actions
  */
 
-export const RESTRICTED_DOMAINS = [
-  'bank',
-  'paytm',
-  'phonepe',
-  'razorpay',
-  'upi',
-  'checkout',
-  'billing',
-  'stripe',
-];
-
-export function isRestrictedDomain(urlStr: string): boolean {
-  try {
-    const parsed = new URL(urlStr);
-    const host = parsed.hostname.toLowerCase();
-    return RESTRICTED_DOMAINS.some((domain) => host.includes(domain));
-  } catch {
-    return false;
-  }
-}
+export * from './domainGuard';
+export * from './fieldGuard';
+export * from './consequentialGuard';

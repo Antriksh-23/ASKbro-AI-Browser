@@ -12,3 +12,4 @@ export function createScopedLogger(scope: string) {
 }
 
 export const logger = createScopedLogger('App');
+
